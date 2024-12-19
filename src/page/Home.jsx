@@ -7,24 +7,29 @@ export default function Home (){
     const [loading, setLoading] = useState(true)
 
     useEffect(() =>{
-        const loadItems = async () => {
-            try {
-                const data = await getItems();
-                setItems(data.slice(0, 10)); //ambil 10 item pertama
-            } catch (error) {
-                console.error("Failed get items");
-            } finally {
-                setLoading(false)
-            }
-        };
+        getItems().then((result) => {
+            setItems(result.slice(0, 10));
+        })
 
-        loadItems();
+        // with loading
+        // const loadItems = async () => {
+        //     try {
+        //         const data = await getItems();
+        //         setItems(data.slice(0, 10)); //ambil 10 item pertama
+        //     } catch (error) {
+        //         console.error("Failed get items");
+        //     } finally {
+        //         setLoading(false)
+        //     }
+        // };
+
+        // loadItems();
     }, []);
 
     return (
         <>
-            <h1>Tes</h1>
-            {loading ? <p>Loading..</p> : <ItemList items={items} />}
+            <h1>Learning React</h1> <br />
+            {<ItemList items={items} />}
         </>
     )
 }
