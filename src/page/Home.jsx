@@ -3,12 +3,17 @@ import { getItems } from "../service/Api"
 import ItemList from "../components/item-list"
 
 export default function Home (){
-    const [items, setItems] = useState([])
-    const [loading, setLoading] = useState(true)
+    const [posts, setPosts] = useState([]);
+    const [comment, setComment] = useState([]);
+    const [loading, setLoading] = useState(true);
 
     useEffect(() =>{
-        getItems().then((result) => {
-            setItems(result.slice(0, 10));
+        getItems("posts").then((result) => {
+            setPosts(result.slice(0, 5));
+        })
+
+        getItems("comments").then((result) => {
+            setComment(result.slice(0,5));
         })
 
         // with loading
@@ -29,7 +34,12 @@ export default function Home (){
     return (
         <>
             <h1>Learning React with API</h1> <br />
-            {<ItemList items={items} />}
+
+            <h1>Posts</h1>
+            {<ItemList items={posts} />}
+            <br/>
+            <h1>Comment</h1>
+            {<ItemList items={comment} />}
         </>
     )
 }

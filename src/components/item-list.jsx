@@ -3,24 +3,24 @@ export default function ItemList ({items}){
         return <p>no items available</p>
     }
 
-
     return items.map((item) => {
         return (
             // looping here
             <div className="wrap-div" key={item.id}>
-                <h2>{item.title}</h2>
-                <p>{item.body}</p>
+
+                {item.title ? (
+                    <>
+                        <h2>{item.title}</h2>
+                        <p>{item.body}</p>
+                    </>
+                ) : (
+                    <>
+                        <h2>{item.name}</h2>
+                        <p>{item.email}</p>
+                    </>
+                )}
+              
             </div>
         )
     });
-    // return(
-    //     <ul>
-    //         {items.map((item) =>(
-    //             <li key={item.id}>
-    //                 <h3>{item.title}</h3>
-    //                 <p>{item.body}</p>
-    //             </li>
-    //         ))}
-    //     </ul>
-    // )
 }
