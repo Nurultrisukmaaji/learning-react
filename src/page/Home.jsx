@@ -9,7 +9,7 @@ export default function Home (){
 
     useEffect(() =>{
         getItems("posts").then((result) => {
-            setPosts(result.slice(0, 5));
+            setPosts(result.slice(0, 5)); 
         })
 
         getItems("comments").then((result) => {
