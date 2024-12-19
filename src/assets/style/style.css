@@ -5,4 +5,13 @@
 
 body {
     font-family: "Montserrat", serif;
+    padding-left: 30px;
+}
+
+.wrap-div {
+    width: 40%;
+    min-height: 100px;
+    background-color: aquamarine;
+    margin-bottom: 20px;
+    padding: 20px;
 }

@@ -28,7 +28,7 @@ export default function Home (){
 
     return (
         <>
-            <h1>Learning React</h1> <br />
+            <h1>Learning React with API</h1> <br />
             {<ItemList items={items} />}
         </>
     )
