@@ -8,6 +8,10 @@ body {
     padding-left: 30px;
 }
 
+.wrap-div-all {
+    display: flex;
+}
+
 .wrap-div {
     width: 40%;
     min-height: 100px;
