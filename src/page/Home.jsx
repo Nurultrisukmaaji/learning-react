@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react"
 import { getItems } from "../service/Api"
 import ItemList from "../components/item-list"
+import ShowHide from "../components/show-hide";
 
 export default function Home (){
     const [posts, setPosts] = useState([]);
@@ -40,6 +41,7 @@ export default function Home (){
             <br/>
             <h1>Comment</h1>
             {<ItemList items={comment} />}
+            <ShowHide />
         </>
     )
 }
