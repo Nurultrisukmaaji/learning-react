@@ -1,6 +1,6 @@
-import { useState, useEffect } from "react"
-import { getItems } from "../service/Api"
-import ItemList from "../components/item-list"
+import { useState, useEffect } from "react";
+import { getItems } from "../service/Api";
+import ItemList from "../components/item-list";
 import ItemListNew from "../components/item-list2";
 import ShowHide from "../components/show-hide";
 
