@@ -6,6 +6,7 @@ import ShowHide from "../components/show-hide";
 export default function Home (){
     const [posts, setPosts] = useState([]);
     const [comment, setComment] = useState([]);
+    const [users, setUsers] = useState([]);
     const [loading, setLoading] = useState(true);
     const [isVisible, setIsVisible] = useState(true);
 
@@ -14,11 +15,15 @@ export default function Home (){
     useEffect(() =>{
         getItems("posts").then((result) => {
             setPosts(result.slice(0, 3)); 
-        })
+        });
 
         getItems("comments").then((result) => {
             setComment(result.slice(0,3));
-        })
+        });
+
+        getItems("users").then((result) => {
+            setUsers(result.slice(0,3));
+        });
 
         // with loading
         // const loadItems = async () => {
@@ -47,15 +52,21 @@ export default function Home (){
             </button>
 
             <h1>Posts</h1>
-            {<ItemList items={posts} />}
+            {<ItemList items={posts} type="post"/>}
             <br/>
 
             { isVisible && (
                 <>
                     <h1>Comment</h1>
-                    {<ItemList items={comment} />}
+                    {<ItemList items={comment} type="comment"/>}
+                    <br />
                 </> 
             )}
+
+            <h1>Users</h1>
+            {<ItemList items={users} type="user"/>}
+
+            
             <ShowHide />
         </>
     )
