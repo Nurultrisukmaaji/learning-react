@@ -8,13 +8,13 @@ export default function ShowHide() {
   };
 
   return (
-    <div style={{ padding: "20px", textAlign: "center" }}>
-      <button onClick={toggleCard} style={{ marginBottom: "10px", padding: "10px 20px", fontSize: "16px" }}>
+    <div>
+      <button onClick={toggleCard}>
         {isVisible ? "Hide Card" : "Show Card"}
       </button>
 
       {isVisible && (
-        <div style={{ marginTop: "20px", padding: "20px", border: "1px solid #ddd", borderRadius: "8px", background: "#f9f9f9" }}>
+        <div>
           <h2>Card Title</h2>
           <p>This is the content of the card. You can add more details here.</p>
         </div>
