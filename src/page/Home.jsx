@@ -10,6 +10,7 @@ export default function Home (){
     const [users, setUsers] = useState([]);
     const [loading, setLoading] = useState(true);
     const [isVisible, setIsVisible] = useState(true);
+    const [isHide, setIsHide] = useState(false);
 
 
     // menampilkan data dari API
@@ -45,11 +46,18 @@ export default function Home (){
     setIsVisible(!isVisible); // ubah nilai state
    }
 
+   function showCard(){
+    setIsHide(!isHide);
+   }
+
     return (
         <>
             <h1>Learning React with API</h1> <br />
             <button onClick={toggle}>
                 {isVisible ? "Hide Card Comments" : "Show Card Comments"}
+            </button>
+            <button onClick={showCard}>
+                {isHide ? "Hide Users" : "Show Users"}
             </button>
 
             <h1>Posts</h1>
@@ -72,8 +80,12 @@ export default function Home (){
             {<ItemListNew items={comment} type="comment"/>}
             <br />
 
-            <h1>Users Type</h1>
-            {<ItemListNew items={users} type="user" />}
+            {isHide && (
+                <>
+                    <h1>Users Type</h1>
+                    {<ItemListNew items={users} type="user" />}
+                </>
+            )}
             
             <ShowHide />
         </>

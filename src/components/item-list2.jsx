@@ -18,6 +18,13 @@ export default function ItemListNew({items, type}){
                         <p>{item.email}</p>
                     </>
                 )}
+                {type === "user" && (
+                    <>
+                        <h2>{item.name}</h2>
+                        <p>Username: {item.username}</p>      
+                        <p>Email: {item.email}</p>      
+                    </>
+                )}
             </div>
         )
     }) 
