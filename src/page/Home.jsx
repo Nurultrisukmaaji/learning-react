@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react"
 import { getItems } from "../service/Api"
 import ItemList from "../components/item-list"
+import ItemListNew from "../components/item-list2";
 import ShowHide from "../components/show-hide";
 
 export default function Home (){
@@ -63,9 +64,16 @@ export default function Home (){
                 </> 
             )}
 
-            <h1>Users</h1>
-            {<ItemList items={users} type="user"/>}
+            <h1>Posts Type</h1>
+            {<ItemListNew items={posts} type="post"/>}
+            <br />
 
+            <h1>Comments Type</h1>
+            {<ItemListNew items={comment} type="comment"/>}
+            <br />
+
+            <h1>Users Type</h1>
+            {<ItemListNew items={users} type="user" />}
             
             <ShowHide />
         </>
