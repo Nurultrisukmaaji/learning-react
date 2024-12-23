@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from "react";
-import SlideToggle from "./slide-toggle";
+// import SlideToggle from "./slide-toggle";
 import { Button } from "react-bootstrap";
 
 export default function ItemListNew({items, type}){
@@ -25,22 +25,17 @@ export default function ItemListNew({items, type}){
                 {type === "post" && (
                     <>
                         <h2>{item.title}</h2>
-                        <p>{item.body}</p>
+                        {/* <p>{item.body}</p> */}
                         <br />
                         {isVisible.includes(item.id) &&  (
                             <p>
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                                Praesentium, architecto totam iure beatae nulla laudantium blanditiis, 
-                                maxime eveniet incidunt minus quos consectetur ipsam distinctio 
-                                illum ex officiis officia magnam nobis.
+                               {item.body}
                             </p>
                         )}
                         <Button onClick={() => toggleCard(item.id)}>
                            {isVisible.includes(item.id) ? "Read Less" : "Read More"}
                         </Button>
-                        {/* <button onClick={() => toggleCard(item.id)}>
-                            Read More
-                        </button> */}
+        
                     </>
                 )}
                 {type === "comment" && (
