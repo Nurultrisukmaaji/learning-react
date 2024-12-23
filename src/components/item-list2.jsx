@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import SlideToggle from "./slide-toggle";
+import { Button } from "react-bootstrap";
 
 export default function ItemListNew({items, type}){
     if(!items.length){
@@ -34,9 +35,12 @@ export default function ItemListNew({items, type}){
                                 illum ex officiis officia magnam nobis.
                             </p>
                         )}
-                        <button onClick={() => toggleCard(item.id)}>
+                        <Button onClick={() => toggleCard(item.id)}>
+                           {isVisible.includes(item.id) ? "Read Less" : "Read More"}
+                        </Button>
+                        {/* <button onClick={() => toggleCard(item.id)}>
                             Read More
-                        </button>
+                        </button> */}
                     </>
                 )}
                 {type === "comment" && (

@@ -3,6 +3,7 @@ import { getItems } from "../service/Api";
 import ItemList from "../components/item-list";
 import ItemListNew from "../components/item-list2";
 import ShowHide from "../components/show-hide";
+import { Button } from "react-bootstrap";
 
 export default function Home (){
     const [posts, setPosts] = useState([]);
@@ -52,13 +53,13 @@ export default function Home (){
 
     return (
         <>
-            <h1>Learning React with API</h1> <br />
-            <button onClick={toggle}>
+            <h1>Learning React with API</h1> <br /> 
+            <Button variant="secondary" onClick={toggle} className="me-2">
                 {isVisible ? "Hide Card Comments" : "Show Card Comments"}
-            </button>
-            <button onClick={showCard}>
+            </Button>
+            <Button onClick={showCard}>
                 {isHide ? "Hide Users" : "Show Users"}
-            </button>
+            </Button>
 
             <h1>Posts</h1>
             {<ItemList items={posts} type="post"/>}
