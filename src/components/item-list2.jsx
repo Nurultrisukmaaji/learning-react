@@ -51,9 +51,9 @@ export default function ItemListNew({items, type}){
                                 illum ex officiis officia magnam nobis.
                             </p>
                         )}
-                        <button onClick={() => toggleCard(item.id)}>
+                        <Button variant="success" onClick={() => toggleCard(item.id)}>
                            {isVisible.includes(item.id) ? "Read Less" : "Read More"}
-                        </button>
+                        </Button>
                     </>
                 )}
                 {type === "user" && (
